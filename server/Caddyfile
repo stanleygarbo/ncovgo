@@ -1,0 +1,3 @@
+ncovgo.stanleygarbo.com {
+  reverse_proxy karma_web_1:8000
+}

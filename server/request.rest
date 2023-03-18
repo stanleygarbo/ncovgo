@@ -1,0 +1,36 @@
+GET http://localhost:8000/cases?CityMunPSGC=PH080000000 HTTP/1.1
+
+###
+
+GET http://localhost:8000/cases HTTP/1.1
+
+###
+
+GET http://localhost:8000/hospitals HTTP/1.1
+
+###
+
+GET http://localhost:8000/hospitals?CityMunPSGC=83738000 HTTP/1.1
+
+###
+
+GET http://localhost:8000/hospitals?RegionPSGC=PH080000000 HTTP/1.1
+
+###
+
+GET http://localhost:8000/hospitals?CityMunPSGC=PH083738000&RegionPSGC=PH080000000 HTTP/1.1
+
+###
+GET http://localhost:8000/hospitals?hfhudcode=DOH000000000023754 HTTP/1.1
+
+###
+
+GET http://localhost:8000/coords HTTP/1.1
+
+###
+
+GET https://ncovgo.stanleygarbo.com/cases?CityMunPSGC=PH083738000
+
+###
+
+GET https://ncovgo.stanleygarbo.com/coords

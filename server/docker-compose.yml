@@ -1,0 +1,37 @@
+version: "3.3"
+
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_PASSWORD: ""
+      MYSQL_DATABASE: "covid_tracker"
+    cap_add:
+      - SYS_NICE # CAP_SYS_NICE
+    command: --local-infile=1
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+  caddy:
+    image: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+
+  web:
+    image: golang
+    build: .
+    restart: always
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
